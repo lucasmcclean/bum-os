@@ -1,0 +1,16 @@
+[package]
+name = "bum-os"
+version = "0.1.0"
+edition = "2024"
+authors = [
+  "Alexander Paolini <alexander@paolini.dev>",
+  "Dhruv Goel <dhruvgoel160207@gmail.com>",
+  "Lucas McClean <lucas@mcclean.dev>"
+]
+description = "A minimal OS."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/lucasmcclean/bum-os"
+categories = ["os"]
+keywords = ["os", "assembly", "bootloader"]
+
+[dependencies]
