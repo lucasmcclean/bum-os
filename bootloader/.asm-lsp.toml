@@ -1,0 +1,6 @@
+[asm]
+assembler = "nasm"
+comment = ";"
+
+[files]
+extensions = ["asm"]
