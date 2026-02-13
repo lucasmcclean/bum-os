@@ -13,12 +13,6 @@ repository = "https://github.com/lucasmcclean/bum-os"
 categories = ["os"]
 keywords = ["os", "assembly", "bootloader"]
 
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"
-
 [[bin]]
 name = "kernel"
 path = "src/main.rs"
