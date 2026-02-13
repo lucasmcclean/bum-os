@@ -6,7 +6,7 @@
 [bits 16] ; 16 bit "real" mode
 [org 0x7C00] ; set addresses relative to 0x7C00
 
-start:
+one_start:
   cli ; [Cl]ear [I]nterrupts
   xor ax, ax ; AX = 0
   mov ds, ax ; [D]ata [S]egment = 0
@@ -17,7 +17,7 @@ start:
   mov ss, ax ; [S]tack [S]egment
   mov sp, 0x7B00 ; [S]tack [P]ointer, below our boot sector
 
-  mov si, boot_msg ; [S]ource [I]ndex
+  mov si, stage_one_msg ; [S]ource [I]ndex
   call print_string
 
   ; TODO: move reading into stage two (with FAT support)
@@ -56,7 +56,7 @@ print_string:
     ret
 
 ; [D]ata [B]ytes, trailing zero for zero byte terminator
-boot_msg db "stage1: load stage2...", 0
+stage_one_msg db "stage1: load stage2...", 0
 err_msg db "stage1: disk read failed", 0
 
 ; Disk Address Packet
