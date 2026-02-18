@@ -25,10 +25,10 @@ test-boot: boot
 
 # Build the kernel
 kernel: $(BUILD_DIR)
-	cargo build \
-		--manifest-path kernel/Cargo.toml \
-		--target kernel/x86_64-unknown-none.json \
-		--target-dir $(KERNEL)
+	@cd kernel && \
+	cargo +nightly build \
+		--target x86_64-unknown-none.json \
+		--target-dir ../$(KERNEL)
 
 # Build and write the image
 $(IMG): boot kernel
